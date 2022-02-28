@@ -123,6 +123,7 @@ function Write() {
                 {imageUrl && (
                   <div className="my-auto p-2">
                     <Image
+                      alt="preview"
                       src={`https://gateway.moralisipfs.com/ipfs/${imageUrl}`}
                       width={100}
                       height={80}
@@ -134,7 +135,7 @@ function Write() {
               <button
                 onClick={AddPost}
                 type="submit"
-                className="bg-gigayellow p-3 text-gigadark text-2xl border-4 border-gigayellow hover:bg-transparent hover:text-white font-mono m-5 font-semibold rounded-lg"
+                className="bg-gigayellow p-3 text-gigadark text-2xl border-4 border-gigayellow hover:bg-transparent dark:hover:text-white font-mono m-5 font-semibold rounded-lg"
               >
                 Submit
               </button>

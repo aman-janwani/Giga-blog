@@ -22,7 +22,9 @@ function Preview({ post }) {
         <div className="mt-5 flex flex-row space-x-2">
           <Image
             alt="profilePic"
-            src={post.get("profilePic")}
+            src={`https://gateway.moralisipfs.com/ipfs/${post.get(
+              "profilePic"
+            )}`}
             height={30}
             width={30}
           />
@@ -34,7 +36,7 @@ function Preview({ post }) {
       <div className="hidden md:block">
         <Image
           alt="postPic"
-          src={post.get("image")}
+          src={`https://gateway.moralisipfs.com/ipfs/${post.get("image")}`}
           height={130}
           className="rounded-xl"
           width={200}

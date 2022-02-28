@@ -8,9 +8,11 @@ function Sidebar() {
   const { user } = useMoralis();
   return (
     <div className="hidden lg:flex flex-col min-h-screen w-72 p-4 bg-gray-100 dark:bg-gigalightpurple">
-      <div className="relative h-32 w-28 mx-auto">
-        <Image alt="logo" src="/assets/3.png" layout="fill" />
-      </div>
+      <Link href="/">
+        <div className="relative cursor-pointer h-32 w-28 mx-auto">
+          <Image alt="logo" src="/assets/3.png" layout="fill" />
+        </div>
+      </Link>
       <div className="flex flex-col justify-between h-full">
         <div className="">
           <Link href="/">
@@ -31,7 +33,9 @@ function Sidebar() {
             {user.get("UserProfilePic") ? (
               <Image
                 alt="profile"
-                src={user.get("UserProfilePic")}
+                src={`https://gateway.moralisipfs.com/ipfs/${user.get(
+                  "UserProfilePic"
+                )}`}
                 height={50}
                 width={50}
                 objectFit="contain"

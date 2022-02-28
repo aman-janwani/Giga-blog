@@ -54,7 +54,7 @@ function Profile() {
       await file.saveIPFS();
       console.log(file.ipfs(), file.hash());
       setUserData({
-        UserProfilePic: file.ipfs(),
+        UserProfilePic: file.hash(),
       });
       // return file.ipfs();
     } else {
@@ -111,7 +111,9 @@ function Profile() {
                   {user.get("UserProfilePic") ? (
                     <Image
                       alt="profile pic"
-                      src={user.get("UserProfilePic")}
+                      src={`https://gateway.moralisipfs.com/ipfs/${user.get(
+                        "UserProfilePic"
+                      )}`}
                       height={150}
                       width={150}
                       objectFit="contain"
@@ -192,7 +194,9 @@ function Profile() {
                     >
                       <Image
                         alt="postpic"
-                        src={post.get("image")}
+                        src={`https://gateway.moralisipfs.com/ipfs/${post.get(
+                          "image"
+                        )}`}
                         height={150}
                         width={300}
                         objectFit="cover"

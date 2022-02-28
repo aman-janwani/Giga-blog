@@ -47,7 +47,9 @@ function Blog() {
                   <div className="text-center">
                     <Image
                       alt="postPic"
-                      src={post.get("image")}
+                      src={`https://gateway.moralisipfs.com/ipfs/${post.get(
+                        "image"
+                      )}`}
                       width={700}
                       height={450}
                       objectFit="cover"
@@ -63,7 +65,9 @@ function Blog() {
                   <div className="flex space-x-4 m-5 mt-10 bg-gray-200 dark:bg-gigadark p-3 w-72 rounded-full">
                     <Image
                       alt="profilePic"
-                      src={post.get("profilePic")}
+                      src={`https://gateway.moralisipfs.com/ipfs/${post.get(
+                        "profilePic"
+                      )}`}
                       height={70}
                       width={70}
                       objectFit="cover"
