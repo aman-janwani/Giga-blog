@@ -11,10 +11,10 @@ function Write() {
 
   if (!isAuthenticated) return <Login />;
 
-  const [imageUrl, setImageUrl] = useState("");
-  const [imagePic, setImagePic] = useState([]);
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
+  const [imagePic, setImagePic] = useState([]);
+  const [imageUrl, setImageUrl] = useState("");
 
   const AddImage = async (e) => {
     if (imagePic.type === "image/jpeg" || imagePic.type === "image/png") {
@@ -28,6 +28,7 @@ function Write() {
     } else {
       alert("We Support only 'jpeg' and 'png' images");
       setImagePic([]);
+      return;
     }
   };
 
@@ -56,10 +57,10 @@ function Write() {
         }
       );
 
-    setTitle("");
-    setContent("");
     setImageUrl("");
     setImagePic([]);
+    setTitle("");
+    setContent("");
   };
 
   return (

@@ -28,7 +28,7 @@ function Login() {
           <div>
             <p className="text-gigaskin contrast-125 ml-5 mt-32 text-justify leading-tight font-semibold text-4xl max-w-xl">
               Giga Blog is a Bloging Platform for Everyone to Share their
-              Thoughts and Ideas. It is World's First Web 3.0 Based Bloging
+              Thoughts and Ideas. It is World&apos;s First Web 3.0 Based Bloging
               Platform.
             </p>
           </div>

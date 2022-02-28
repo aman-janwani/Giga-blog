@@ -14,13 +14,13 @@ function Header() {
     <div className="sticky flex justify-between bg-white dark:bg-gigadark shadow-lg h-20 p-2">
       <div className="flex space-x-5">
         <Link href="/">
-          <div className="p-2 w-32 md:w-48 text-center my-auto text-lg flex lg:hidden justify-center space-x-2 rounded-2xl cursor-pointer text-gigadark bg-gray-300 dark:text-white dark:bg-gigalightpurple hover:brightness-105">
+          <div className="p-2 w-16 sm:w-32 md:w-48 text-center my-auto text-lg flex lg:hidden justify-center space-x-2 rounded-2xl cursor-pointer text-gigadark bg-gray-300 dark:text-white dark:bg-gigalightpurple hover:brightness-105">
             <MdOutlineFeed className="my-auto" />
             <h1 className="font-mono font-semibold hidden sm:block">My Feed</h1>
           </div>
         </Link>
         <Link href="/write">
-          <div className="p-2 w-32 md:w-48 text-lg flex lg:hidden my-auto justify-center space-x-3 text-center rounded-2xl cursor-pointer text-gigadark bg-gigayellow hover:brightness-125">
+          <div className="p-2 w-16 sm:w-32 md:w-48 text-lg flex lg:hidden my-auto justify-center space-x-3 text-center rounded-2xl cursor-pointer text-gigadark bg-gigayellow hover:brightness-125">
             <BsFillPencilFill className="my-auto" />
             <h1 className="font-mono font-semibold hidden sm:block">Write</h1>
           </div>

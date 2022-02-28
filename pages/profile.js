@@ -7,8 +7,10 @@ import Sidebar from "../components/Sidebar";
 import { BsFillPencilFill } from "react-icons/bs";
 import { BsFillCameraFill } from "react-icons/bs";
 import { useState } from "react";
+import { useRouter } from "next/router";
 
 function Profile() {
+  const router = useRouter();
   const {
     isAuthenticated,
     logout,
@@ -176,7 +178,15 @@ function Profile() {
                   return (
                     <div
                       key={post.id}
-                      className="p-5 rounded-xl bg-gray-200 dark:bg-gigalightpurple"
+                      onClick={() => {
+                        router.push({
+                          pathname: "/blog",
+                          query: {
+                            id: post.id,
+                          },
+                        });
+                      }}
+                      className="p-5 rounded-xl cursor-pointer hover:brightness-110 bg-gray-200 dark:bg-gigalightpurple"
                     >
                       <Image
                         src={post.get("image")}
@@ -185,10 +195,10 @@ function Profile() {
                         objectFit="cover"
                         className="rounded-2xl"
                       />
-                      <h1 className="text-gigadark text-3xl font-mono font-semibold dark:text-white">
+                      <h1 className="text-gigadark truncate text-3xl font-mono font-semibold dark:text-white">
                         {post.get("title")}
                       </h1>
-                      <p className="text-gigadark font-mono w-72 mx-auto dark:text-gray-200">
+                      <p className="text-gigadark truncate font-mono w-72 mx-auto dark:text-gray-200">
                         {post.get("content")}
                       </p>
                     </div>
