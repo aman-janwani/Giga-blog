@@ -1,7 +1,7 @@
 import Head from "next/head";
 import Header from "../components/Header";
 import Sidebar from "../components/Sidebar";
-import { useMoralis, useMoralisFile } from "react-moralis";
+import { useMoralis } from "react-moralis";
 import Login from "../components/Login";
 import { useState } from "react";
 import Image from "next/image";
@@ -11,7 +11,6 @@ function Write() {
   const [content, setContent] = useState("");
   const [imagePic, setImagePic] = useState([]);
   const [imageUrl, setImageUrl] = useState("");
-  const { error, isUploading, moralisFile, saveFile } = useMoralisFile();
 
   const { isAuthenticated, Moralis, user } = useMoralis();
 
@@ -20,17 +19,12 @@ function Write() {
   const AddImage = async (e) => {
     if (imagePic.type === "image/jpeg" || imagePic.type === "image/png") {
       const filename = imagePic.name.replace(/[^a-zA-Z ]/g, "");
-      saveFile(filename, imagePic, { saveIPFS: true });
-      await moralisFile._ipfs;
-      console.log(moralisFile._ipfs);
-      setImageUrl(moralisFile._ipfs);
+      const file = new Moralis.File(filename, imagePic);
+      await file.saveIPFS();
+      console.log(file.ipfs(), file.hash());
+      setImageUrl(file.hash());
       setImagePic([]);
-      // const file = new Moralis.File(filename, imagePic);
-      // await file.saveIPFS();
-      // console.log(file.ipfs(), file.hash());
-      // setImageUrl(file.hash());
-      // setImagePic([]);
-      // // return file.ipfs();
+      // return file.ipfs();
     } else {
       alert("We Support only 'jpeg' and 'png' images");
       setImagePic([]);
@@ -129,7 +123,7 @@ function Write() {
                 {imageUrl && (
                   <div className="my-auto p-2">
                     <Image
-                      src={imageUrl}
+                      src={`https://gateway.moralisipfs.com/ipfs/${imageUrl}`}
                       width={100}
                       height={80}
                       className="rounded-xl my-auto"
