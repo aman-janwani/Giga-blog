@@ -6,8 +6,8 @@ import useDarkMode from "../hooks/useDarkMode";
 import { MdOutlineFeed } from "react-icons/md";
 
 function Header() {
-  const { logout } = useMoralis();
   const [colorTheme, setTheme] = useDarkMode();
+  const { logout } = useMoralis();
 
   return (
     <div className="sticky flex justify-between bg-white dark:bg-gigadark shadow-lg h-20 p-2">
