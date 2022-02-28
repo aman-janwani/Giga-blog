@@ -22,7 +22,7 @@ function Write() {
       const file = new Moralis.File(filename, imagePic);
       await file.saveIPFS();
       console.log(file.ipfs(), file.hash());
-      setImageUrl(file.ipfs());
+      setImageUrl(file.hash());
       setImagePic([]);
       // return file.ipfs();
     } else {
@@ -123,7 +123,7 @@ function Write() {
                 {imageUrl && (
                   <div className="my-auto p-2">
                     <Image
-                      src={imageUrl}
+                      src={`https://ipfs.moralis.io:2053/ipfs/${imageUrl}`}
                       width={100}
                       height={80}
                       className="rounded-xl my-auto"
