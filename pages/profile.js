@@ -110,6 +110,7 @@ function Profile() {
                 <div className="my-auto space-x-1 hidden sm:flex">
                   {user.get("UserProfilePic") ? (
                     <Image
+                      alt="profile pic"
                       src={user.get("UserProfilePic")}
                       height={150}
                       width={150}
@@ -118,6 +119,7 @@ function Profile() {
                     />
                   ) : (
                     <Image
+                      alt="profile pic"
                       src={"/assets/6.png"}
                       height={150}
                       width={150}
@@ -189,6 +191,7 @@ function Profile() {
                       className="p-5 rounded-xl cursor-pointer hover:brightness-110 bg-gray-200 dark:bg-gigalightpurple"
                     >
                       <Image
+                        alt="postpic"
                         src={post.get("image")}
                         height={150}
                         width={300}

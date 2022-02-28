@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Preview from "./Preview";
 import { useMoralisQuery } from "react-moralis";
 

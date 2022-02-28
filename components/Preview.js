@@ -1,5 +1,4 @@
 import Image from "next/image";
-import Link from "next/link";
 import { useRouter } from "next/router";
 
 function Preview({ post }) {
@@ -21,7 +20,12 @@ function Preview({ post }) {
         <h1 className="text-3xl font-semibold mb-4">{post.get("title")}</h1>
         <p className="truncate w-96">{post.get("content")}</p>
         <div className="mt-5 flex flex-row space-x-2">
-          <Image src={post.get("profilePic")} height={30} width={30} />
+          <Image
+            alt="profilePic"
+            src={post.get("profilePic")}
+            height={30}
+            width={30}
+          />
           <p className="text-gray-600 dark:text-gray-200 font-bold text-md my-auto">
             {post.get("username")}
           </p>
@@ -29,6 +33,7 @@ function Preview({ post }) {
       </div>
       <div className="hidden md:block">
         <Image
+          alt="postPic"
           src={post.get("image")}
           height={130}
           className="rounded-xl"

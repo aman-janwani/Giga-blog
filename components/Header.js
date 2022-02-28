@@ -1,9 +1,8 @@
-import Image from "next/image";
 import { useMoralis } from "react-moralis";
 import { BsFillPencilFill, BsFillSunFill } from "react-icons/bs";
 import { BsFillMoonFill } from "react-icons/bs";
-import useDarkMode from "../useDarkMode";
 import Link from "next/link";
+import useDarkMode from "../hooks/useDarkMode";
 import { MdOutlineFeed } from "react-icons/md";
 
 function Header() {

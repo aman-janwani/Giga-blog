@@ -1,6 +1,5 @@
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect } from "react";
 import { BsFillPencilFill } from "react-icons/bs";
 import { MdOutlineFeed } from "react-icons/md";
 import { useMoralis } from "react-moralis";
@@ -10,7 +9,7 @@ function Sidebar() {
   return (
     <div className="hidden lg:flex flex-col min-h-screen w-72 p-4 bg-gray-100 dark:bg-gigalightpurple">
       <div className="relative h-32 w-28 mx-auto">
-        <Image src="/assets/3.png" layout="fill" />
+        <Image alt="logo" src="/assets/3.png" layout="fill" />
       </div>
       <div className="flex flex-col justify-between h-full">
         <div className="">
@@ -31,6 +30,7 @@ function Sidebar() {
           <div className="cursor-pointer flex flex-row justify-evenly rounded-3xl p-2 bg-gray-50 dark:bg-gigadark border-2 border-gigayellow">
             {user.get("UserProfilePic") ? (
               <Image
+                alt="profile"
                 src={user.get("UserProfilePic")}
                 height={50}
                 width={50}
@@ -39,6 +39,7 @@ function Sidebar() {
               />
             ) : (
               <Image
+                alt="profile"
                 src={"/assets/6.png"}
                 height={50}
                 width={50}

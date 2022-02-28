@@ -14,7 +14,7 @@ function Login() {
         <div className="bg-[url(/assets/bg2.png)] bg-cover w-full h-screen">
           <div className="flex justify-between">
             <div className="relative h-36 w-36 ml-6 ">
-              <Image src="/assets/3.png" layout="fill" />
+              <Image alt="logo" src="/assets/3.png" layout="fill" />
             </div>
             <div className="m-10">
               <button
