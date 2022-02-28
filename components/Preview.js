@@ -27,6 +27,7 @@ function Preview({ post }) {
             )}`}
             height={30}
             width={30}
+            className="rounded-full"
           />
           <p className="text-gray-600 dark:text-gray-200 font-bold text-md my-auto">
             {post.get("username")}

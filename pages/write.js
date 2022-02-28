@@ -5,6 +5,7 @@ import { useMoralis } from "react-moralis";
 import Login from "../components/Login";
 import { useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 function Write() {
   const [title, setTitle] = useState("");
@@ -97,6 +98,11 @@ function Write() {
                 rows="10"
                 className="p-4 m-5 font-mono outline-none rounded-lg bg-gray-200 text-gigadark placeholder:text-gigadark text-lg font-semibold dark:bg-gigadark dark:text-gray-100 dark:placeholder:text-gray-200"
               ></textarea>
+              <Link href="https://gigaeditor.netlify.app/">
+                <button className="bg-gigayellow p-3 text-gigadark text-xl border-4 border-gigayellow hover:bg-transparent dark:hover:text-white font-mono m-5 rounded-lg text-center">
+                  Try Our Markdown Editor
+                </button>
+              </Link>
               <div className="bg-gray-200 flex p-4 flex-col md:flex-row text-gigadark dark:bg-gigadark space-x-4 justify-center m-5 rounded-lg">
                 <input
                   onChange={(e) => {
