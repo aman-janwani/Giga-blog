@@ -7,14 +7,14 @@ import { useState } from "react";
 import Image from "next/image";
 
 function Write() {
-  const { isAuthenticated, Moralis, user } = useMoralis();
-
-  if (!isAuthenticated) return <Login />;
-
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
   const [imagePic, setImagePic] = useState([]);
   const [imageUrl, setImageUrl] = useState("");
+
+  const { isAuthenticated, Moralis, user } = useMoralis();
+
+  if (!isAuthenticated) return <Login />;
 
   const AddImage = async (e) => {
     if (imagePic.type === "image/jpeg" || imagePic.type === "image/png") {
@@ -114,7 +114,7 @@ function Write() {
                   onClick={(e) => {
                     e.preventDefault();
                     AddImage();
-                    console.log(imagePic);
+                    // console.log(imagePic);
                   }}
                   className="bg-gigayellow rounded-lg p-3 my-auto max-w-xs font-mono font-semibold"
                 >
