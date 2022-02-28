@@ -2,7 +2,7 @@ import { useMoralis } from "react-moralis";
 import { BsFillPencilFill, BsFillSunFill } from "react-icons/bs";
 import { BsFillMoonFill } from "react-icons/bs";
 import Link from "next/link";
-import useDarkMode from "../hooks/useDarkMode";
+import useDarkMode from "../hooks/useDarkmode";
 import { MdOutlineFeed } from "react-icons/md";
 
 function Header() {
