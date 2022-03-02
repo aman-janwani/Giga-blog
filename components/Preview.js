@@ -20,15 +20,26 @@ function Preview({ post }) {
         <h1 className="text-3xl font-semibold mb-4">{post.get("title")}</h1>
         <p className="truncate w-96">{post.get("content")}</p>
         <div className="mt-5 flex flex-row space-x-2">
-          <Image
-            alt="profilePic"
-            src={`https://gateway.moralisipfs.com/ipfs/${post.get(
-              "profilePic"
-            )}`}
-            height={30}
-            width={30}
-            className="rounded-full"
-          />
+          {post.get("profilePic") ? (
+            <Image
+              alt="profile pic"
+              src={`https://gateway.moralisipfs.com/ipfs/${post.get(
+                "profilePic"
+              )}`}
+              height={30}
+              width={30}
+              objectFit="contain"
+              className="rounded-full"
+            />
+          ) : (
+            <Image
+              alt="profile pic"
+              src={"/assets/6.png"}
+              height={30}
+              width={30}
+              objectFit="contain"
+            />
+          )}
           <p className="text-gray-600 dark:text-gray-200 font-bold text-md my-auto">
             {post.get("username")}
           </p>
